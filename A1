@@ -9,12 +9,12 @@ public class ControlePagamentos {
         System.out.print("Por favor, digite seu nome: ");
         String nomeCliente = scanner.nextLine();
         System.out.print("Digite o valor total da sua compra: ");
-        double valorCompra = scanner.nextDouble();
+        double valorDACompra = scanner.nextDouble();
         System.out.print("Digite o valor que você irá pagar: ");
-        double valorPago = scanner.nextDouble();
+        double valorAPagar = scanner.nextDouble();
 
         // Calcular troco
-        double troco = valorPago - valorCompra;
+        double troco = valorAPagar - valorDACompra;
 
         // Verificar se o valor pago é suficiente
         if (troco < 0) {
@@ -28,8 +28,8 @@ public class ControlePagamentos {
         // Imprimir recibo
         System.out.println("\nRecibo de compra:");
         System.out.println("Cliente: " + nomeCliente);
-        System.out.println("Valor da compra: R$" + valorCompra);
-        System.out.println("Valor pago: R$" + valorPago);
+        System.out.println("Valor da compra: R$" + valorDACompra);
+        System.out.println("Valor pago: R$" + valorAPagar);
         System.out.println("Troco a ser devolvido: R$" + troco);
         System.out.println("Notas do troco:");
         System.out.println("R$100: " + notas[0]);
@@ -43,7 +43,7 @@ public class ControlePagamentos {
 
     // Método para calcular as notas do troco
     public static int[] calcularTroco(double troco) {
-        int[] notas = new int[7]; // Índices representando as notas de R$100, R$50, R$20, R$10, R$5, R$2 e R$1
+        int[] notas = new int[7]; // notas de R$100, R$50, R$20, R$10, R$5, R$2 e R$1
 
         int[] valoresNotas = {100, 50, 20, 10, 5, 2, 1};
 
@@ -57,3 +57,4 @@ public class ControlePagamentos {
         return notas;
     }
 }
+
